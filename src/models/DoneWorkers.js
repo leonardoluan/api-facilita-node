@@ -5,7 +5,7 @@ class DoneWorker extends Model {
     super.init({
       comment: DataTypes.STRING,
       total_price: DataTypes.INTEGER,
-      starts: DataTypes.INTEGER,
+      stars: DataTypes.INTEGER,
       start_service: DataTypes.DATE,
       finish_service: DataTypes.DATE,
     },
@@ -15,8 +15,8 @@ class DoneWorker extends Model {
   }
 
   static associate(models) {
-    this.belongsTo(models.User, { foreignKey: 'worker_id', as: 'user_worker' });
-    this.belongsTo(models.User, { foreignKey: 'contractor_id', as: 'user_contractor' });
+    this.belongsTo(models.User, { foreignKey: 'worker_id', as: 'userworker' });
+    this.belongsTo(models.User, { foreignKey: 'contractor_id', as: 'usercontractor' });
     this.belongsTo(models.Service, { foreignKey: 'service_id', as: 'service' });
   }
 }

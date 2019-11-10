@@ -1,7 +1,7 @@
 
 module.exports = {
 
-  up: (queryInterface, Sequelize) => queryInterface.createTable('done_workes', {
+  up: (queryInterface, Sequelize) => queryInterface.createTable('done_workers', {
     id: {
       type: Sequelize.INTEGER,
       primaryKey: true,
@@ -34,7 +34,7 @@ module.exports = {
     },
     comment: Sequelize.STRING,
     total_price: Sequelize.INTEGER,
-    starts: Sequelize.INTEGER,
+    stars: Sequelize.INTEGER,
     start_service: Sequelize.DATE,
     finish_service: Sequelize.DATE,
     created_at: {
@@ -47,5 +47,5 @@ module.exports = {
     },
   }),
 
-  down: (queryInterface, Sequelize) => queryInterface.dropTable('done_workes'),
+  down: (queryInterface, Sequelize) => queryInterface.dropTable('done_workers'),
 };

@@ -1,6 +1,6 @@
 
 const express = require('express');
-const { User, Service } = require('./controllers');
+const { User, Service, DoneWorker } = require('./controllers');
 // const auth = require('./middlewares/auth');
 
 const routes = express.Router();
@@ -17,6 +17,12 @@ routes.get('/services', Service.index);
 routes.post('/services', Service.store);
 routes.put('/services/:id_service', Service.update);
 routes.delete('/services/:id_service', Service.destroy);
+
+// DONEWORKER
+routes.get('/doneWorkers', DoneWorker.index);
+routes.post('/doneWorkers', DoneWorker.store);
+routes.put('/doneWorkers/:id_doneWorker', DoneWorker.update);
+routes.delete('/doneWorkers/:id_doneWorker', DoneWorker.destroy);
 
 
 module.exports = routes;

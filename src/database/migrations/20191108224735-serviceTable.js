@@ -41,7 +41,7 @@ module.exports = {
       required: true,
     },
     price: {
-      type: Sequelize.STRING,
+      type: Sequelize.INTEGER,
       allowNull: false,
       required: true,
     },

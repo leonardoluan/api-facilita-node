@@ -3,41 +3,43 @@ const { DoneWorkers } = require('../models');
 
 module.exports = {
   async index(req, res) {
-    const users = await User.findAll();
-    return res.json(users);
+    const doneWorker = await DoneWorkers.findAll({
+      include: ['userworker', 'usercontractor', 'service'],
+    });
+    return res.json(doneWorker);
   },
   async store(req, res) {
-    const user = await User.create(req.body);
-    return res.json(user);
+    const doneWorker = await DoneWorkers.create(req.body);
+    return res.json(doneWorker);
   },
   async update(req, res) {
-    const { id_user } = req.params;
+    const { id_doneWorker } = req.params;
 
-    const isUser = await User.findByPk(id_user);
+    const isDoneWorker = await DoneWorkers.findByPk(id_doneWorker);
 
-    if (!isUser) {
+    if (!isDoneWorker) {
       return res.status(404).json({
-        error: 'User not found',
+        error: 'Done Worker not found',
       });
     }
-    const [number, user] = await User.update(
+    const [number, doneWorker] = await DoneWorkers.update(
       { ...req.body },
-      { where: { id: id_user }, returning: true },
+      { where: { id: id_doneWorker }, returning: true },
     );
 
-    return res.json(user[0]);
+    return res.json(doneWorker[0]);
   },
   async destroy(req, res) {
-    const { id_user } = req.params;
+    const { id_doneWorker } = req.params;
 
-    const isUser = await User.findByPk(id_user);
+    const isDoneWorker = await DoneWorkers.findByPk(id_doneWorker);
 
-    if (!isUser) {
+    if (!isDoneWorker) {
       return res.status(404).json({
-        error: 'User not found!',
+        error: 'Done Worker not found!',
       });
     }
-    await User.destroy({ where: { id: id_user } });
+    await DoneWorkers.destroy({ where: { id: id_doneWorker } });
 
     return res.status(200);
   },

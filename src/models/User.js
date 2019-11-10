@@ -18,8 +18,8 @@ class User extends Model {
 
   static associate(models) {
     this.hasMany(models.Service, { foreignKey: 'user_id', as: 'service' });
-    this.hasMany(models.User, { foreignKey: 'user_id', as: 'user_worker' });
-    this.hasMany(models.User, { foreignKey: 'user_id', as: 'user_contractor' });
+    this.hasMany(models.DoneWorker, { foreignKey: 'worker_id', as: 'userworker' });
+    this.hasMany(models.DoneWorker, { foreignKey: 'contractor_id', as: 'usercontractor' });
   }
 }
 
