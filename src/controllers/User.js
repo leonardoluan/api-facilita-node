@@ -21,7 +21,7 @@ module.exports = {
       });
     }
 
-    const token = jwt.sign({ user }, process.env.CHAVEJWT, {
+    const token = jwt.sign({ user }, process.env.CHAVEJWT || 'macaconaovoa', {
       expiresIn: '8h',
     });
 

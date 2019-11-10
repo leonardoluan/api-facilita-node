@@ -1,7 +1,7 @@
 const { Service } = require('../models');
 
 module.exports = {
-  async index (req, res) {
+  async index(req, res) {
     const services = await Service.findAll();
     return res.json(services);
   },
@@ -19,7 +19,7 @@ module.exports = {
         error: 'Service not found',
       });
     }
-    const [number , service] = await Service.update(
+    const [number, service] = await Service.update(
       { ...req.body },
       { where: { id: id_service }, returning: true },
     );

@@ -20,6 +20,7 @@ class User extends Model {
     this.hasMany(models.Service, { foreignKey: 'user_id', as: 'service' });
     this.hasMany(models.DoneWorker, { foreignKey: 'worker_id', as: 'userworker' });
     this.hasMany(models.DoneWorker, { foreignKey: 'contractor_id', as: 'usercontractor' });
+    this.hasMany(models.File, { foreignKey: 'user_id', as: 'file' });
   }
 }
 

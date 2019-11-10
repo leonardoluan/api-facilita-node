@@ -1,6 +1,10 @@
 
 const express = require('express');
-const { User, Service, DoneWorker } = require('./controllers');
+const multer = require('multer');
+const configMulter = require('./services/multer');
+const {
+  User, Service, DoneWorker, File,
+} = require('./controllers');
 // const auth = require('./middlewares/auth');
 
 const routes = express.Router();
@@ -24,5 +28,8 @@ routes.post('/doneWorkers', DoneWorker.store);
 routes.put('/doneWorkers/:id_doneWorker', DoneWorker.update);
 routes.delete('/doneWorkers/:id_doneWorker', DoneWorker.destroy);
 
+// FILE
+routes.get('/file/:id', File.index);
+routes.post('/file/:user_id', multer(configMulter).single('file'), File.store);
 
 module.exports = routes;

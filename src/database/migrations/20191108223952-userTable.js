@@ -28,7 +28,7 @@ module.exports = {
     user_uf: Sequelize.STRING,
     user_city: Sequelize.STRING,
     created_at: {
-      type: Sequelize.DATE, 
+      type: Sequelize.DATE,
       allowNull: false,
     },
     updated_at: {

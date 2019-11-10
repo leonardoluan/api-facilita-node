@@ -9,7 +9,7 @@ module.exports = {
         description: 'Teste',
         specialization: 'Formatação',
         price_type: 'Por Hora',
-        price: 'R$ 12,99',
+        price: 13,
         created_at: new Date(),
         updated_at: new Date(),
       },
