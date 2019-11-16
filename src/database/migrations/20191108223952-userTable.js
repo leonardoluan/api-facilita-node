@@ -27,6 +27,7 @@ module.exports = {
     birth_date: Sequelize.DATE,
     user_uf: Sequelize.STRING,
     user_city: Sequelize.STRING,
+    facebook_token: Sequelize.STRING,
     created_at: {
       type: Sequelize.DATE,
       allowNull: false,
