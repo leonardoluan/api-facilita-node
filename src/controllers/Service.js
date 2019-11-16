@@ -1,4 +1,9 @@
-const { Service, User, DoneWorkers } = require('../models');
+const {
+  Service,
+  User,
+  DoneWorkers,
+  File,
+} = require('../models');
 
 module.exports = {
   async index(req, res) {
@@ -53,6 +58,10 @@ module.exports = {
           include: [{
             model: DoneWorkers,
             as: 'userworker',
+          },
+          {
+            model: File,
+            as: 'file',
           }],
         },
       ],
