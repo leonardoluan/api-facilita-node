@@ -15,7 +15,7 @@ module.exports = {
         key: 'id',
       },
     },
-    type: {
+    ftype: {
       type: Sequelize.STRING,
       allowNull: false,
       required: true,
@@ -36,7 +36,7 @@ module.exports = {
       required: true,
     },
     price: {
-      type: Sequelize.INTEGER,
+      type: Sequelize.DECIMAL(10, 2),
       allowNull: false,
       required: true,
     },
