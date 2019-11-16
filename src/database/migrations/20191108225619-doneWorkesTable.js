@@ -32,6 +32,9 @@ module.exports = {
         key: 'id',
       },
     },
+    file:{
+      type: Sequelize.STRING,
+    },
     comment: Sequelize.STRING,
     total_price: Sequelize.INTEGER,
     stars: Sequelize.INTEGER,

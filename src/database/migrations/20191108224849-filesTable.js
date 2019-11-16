@@ -28,6 +28,9 @@ module.exports = {
       type: Sequelize.DATE,
       allowNull: false,
     },
+    type_file:{
+      type: Sequelize.STRING,
+    }
   }),
 
   down: (queryInterface, Sequelize) => queryInterface.dropTable('files'),
