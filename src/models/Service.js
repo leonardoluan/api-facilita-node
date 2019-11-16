@@ -9,7 +9,6 @@ class Service extends Model {
       specialization: DataTypes.STRING,
       price_type: DataTypes.STRING,
       price: DataTypes.STRING,
-
     },
     {
       sequelize,
