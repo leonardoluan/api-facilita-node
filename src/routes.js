@@ -18,6 +18,7 @@ routes.delete('/users/:id_user', User.destroy);
 
 // SERVICE
 routes.get('/services', Service.index);
+routes.get('/services/:type_service', Service.findServidesByType);
 routes.post('/services', Service.store);
 routes.put('/services/:id_service', Service.update);
 routes.delete('/services/:id_service', Service.destroy);

@@ -1,8 +1,9 @@
-const { Service } = require('../models');
+const { Service, User, DoneWorkers } = require('../models');
 
 module.exports = {
   async index(req, res) {
     const services = await Service.findAll();
+
     return res.json(services);
   },
   async store(req, res) {
@@ -29,7 +30,7 @@ module.exports = {
   async destroy(req, res) {
     const { id_service } = req.params;
 
-    const isService = await Service.findByPk(id_service);
+    const isService = await Service.fdByPk(id_service);
 
     if (!isService) {
       return res.status(404).json({
@@ -39,5 +40,24 @@ module.exports = {
     await Service.destroy({ where: { id: id_service } });
 
     return res.status(200);
+  },
+  async findServidesByType(req, res) {
+    const { type_service } = req.params;
+
+    const services = await Service.findAll({
+      where: { type: type_service },
+      include: [
+        {
+          model: User,
+          as: 'user',
+          include: [{
+            model: DoneWorkers,
+            as: 'userworker',
+          }],
+        },
+      ],
+      returning: true,
+    });
+    return res.json(services);
   },
 };
