@@ -32,7 +32,7 @@ module.exports = {
         key: 'id',
       },
     },
-    file:{
+    file: {
       type: Sequelize.STRING,
     },
     comment: Sequelize.STRING,

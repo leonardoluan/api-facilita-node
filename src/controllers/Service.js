@@ -69,4 +69,27 @@ module.exports = {
     });
     return res.json(services);
   },
+  async findServiceById(req, res) {
+    const { id } = req.params;
+
+    const services = await Service.findOne({
+      where: { id },
+      include: [
+        {
+          model: User,
+          as: 'user',
+          include: [{
+            model: File,
+            as: 'file',
+          },
+          {
+            model: DoneWorkers,
+            as: 'userworker',
+          }],
+        },
+      ],
+      returning: true,
+    });
+    return res.json(services);
+  },
 };
