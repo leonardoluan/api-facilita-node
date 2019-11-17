@@ -8,6 +8,7 @@ class DoneWorker extends Model {
       stars: DataTypes.INTEGER,
       start_service: DataTypes.DATE,
       finish_service: DataTypes.DATE,
+      status: DataTypes.STRING,
     },
     {
       sequelize,

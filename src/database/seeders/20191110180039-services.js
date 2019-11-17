@@ -15,7 +15,7 @@ module.exports = {
       {
         id: 2,
         user_id: 2,
-        ftype: 'Mecânica',
+        type: 'Mecânica',
         description: 'Manutenção em motores antigos',
         specialization: 'Motores antigos',
         price_type: 'Por Hora',
@@ -26,7 +26,7 @@ module.exports = {
       {
         id: 3,
         user_id: 3,
-        ftype: 'Tecnologia',
+        type: 'Tecnologia',
         description: 'Teste',
         specialization: 'Formatação',
         price_type: 'Por Hora',
