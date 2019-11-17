@@ -41,6 +41,7 @@ module.exports = {
     start_service: Sequelize.DATE,
     finish_service: Sequelize.DATE,
     finished: Sequelize.STRING,
+    status: Sequelize.STRING,
     created_at: {
       type: Sequelize.DATE,
       allowNull: false,
