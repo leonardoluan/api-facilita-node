@@ -51,6 +51,5 @@ module.exports = {
       allowNull: false,
     },
   }),
-
   down: (queryInterface, Sequelize) => queryInterface.dropTable('done_workers'),
 };

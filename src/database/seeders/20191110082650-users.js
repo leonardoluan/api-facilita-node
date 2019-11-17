@@ -37,6 +37,18 @@ module.exports = {
         created_at: new Date(),
         updated_at: new Date(),
       },
+      {
+        id: 4,
+        name: 'Danilo Francisco',
+        email: 'danilo@gmail.com',
+        password: '12345678',
+        phone: '14 9887255241',
+        user_uf: 'SP',
+        user_city: 'Lucianópolis',
+        birth_date: new Date('1998/08/11'),
+        created_at: new Date(),
+        updated_at: new Date(),
+      },
     ], {}),
 
   down: (queryInterface) => queryInterface.bulkDelete('users', null, {}),
