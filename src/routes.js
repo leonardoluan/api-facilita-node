@@ -12,6 +12,7 @@ const routes = express.Router();
 // USER
 routes.post('/users/login', User.login);
 routes.get('/users', User.index);
+routes.get('/users/:id', User.findById);
 routes.post('/users', User.store);
 routes.put('/users/:id_user', User.update);
 routes.delete('/users/:id_user', User.destroy);
@@ -19,6 +20,7 @@ routes.delete('/users/:id_user', User.destroy);
 // SERVICE
 routes.get('/services', Service.index);
 routes.get('/services/:type_service', Service.findServidesByType);
+routes.get('/services/id/:id', Service.findServiceById);
 routes.post('/services', Service.store);
 routes.put('/services/:id_service', Service.update);
 routes.delete('/services/:id_service', Service.destroy);

@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken');
-const { User } = require('../models');
+const { User, File } = require('../models');
 
 module.exports = {
   async index(req, res) {
@@ -60,5 +60,18 @@ module.exports = {
     await User.destroy({ where: { id: id_user } });
 
     return res.status(200);
+  },
+  async findById(req, res) {
+    const { id } = req.params;
+
+    const user = await User.findOne({
+      where: { id },
+      include: [{
+        model: File,
+        as: 'file',
+      }],
+      returning: true,
+    });
+    return res.json(user);
   },
 };

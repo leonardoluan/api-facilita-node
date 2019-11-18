@@ -15,7 +15,7 @@ module.exports = {
         key: 'id',
       },
     },
-    ftype: {
+    type: {
       type: Sequelize.STRING,
       allowNull: false,
       required: true,
