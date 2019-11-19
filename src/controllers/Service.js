@@ -92,4 +92,27 @@ module.exports = {
     });
     return res.json(services);
   },
+  async findServiceByUserId(req, res) {
+    const { user_id } = req.params;
+
+    const services = await Service.findAll({
+      where: { user_id },
+      include: [
+        {
+          model: User,
+          as: 'user',
+          include: [{
+            model: File,
+            as: 'file',
+          },
+          {
+            model: DoneWorkers,
+            as: 'userworker',
+          }],
+        },
+      ],
+      returning: true,
+    });
+    return res.json(services);
+  },
 };

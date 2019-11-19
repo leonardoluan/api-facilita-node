@@ -25,6 +25,9 @@ routes.post('/services', Service.store);
 routes.put('/services/:id_service', Service.update);
 routes.delete('/services/:id_service', Service.destroy);
 
+routes.get('/services/user_id/:user_id', Service.findServiceByUserId);
+
+
 // DONEWORKER
 routes.get('/doneWorkers', DoneWorker.index);
 routes.post('/doneWorkers', DoneWorker.store);
