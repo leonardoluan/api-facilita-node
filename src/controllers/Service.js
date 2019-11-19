@@ -35,7 +35,7 @@ module.exports = {
   async destroy(req, res) {
     const { id_service } = req.params;
 
-    const isService = await Service.fdByPk(id_service);
+    const isService = await Service.findByPk(id_service);
 
     if (!isService) {
       return res.status(404).json({
