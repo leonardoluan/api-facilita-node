@@ -48,9 +48,10 @@ module.exports = {
   },
   async findServidesByType(req, res) {
     const { type_service } = req.params;
+    console.log(decodeURIComponent(type_service));
 
     const services = await Service.findAll({
-      where: { type: type_service },
+      where: { type: decodeURIComponent(type_service) },
       include: [
         {
           model: User,
