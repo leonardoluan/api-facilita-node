@@ -36,6 +36,8 @@ module.exports = {
       type: Sequelize.STRING,
     },
     comment: Sequelize.STRING,
+    status_worker: Sequelize.STRING,
+    status_contractor: Sequelize.STRING,
     total_price: Sequelize.INTEGER,
     stars: Sequelize.INTEGER,
     start_service: Sequelize.DATE,

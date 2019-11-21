@@ -4,6 +4,8 @@ class DoneWorker extends Model {
   static init(sequelize) {
     super.init({
       comment: DataTypes.STRING,
+      status_worker: DataTypes.STRING,
+      status_contractor: DataTypes.STRING,
       total_price: DataTypes.INTEGER,
       stars: DataTypes.INTEGER,
       start_service: DataTypes.DATE,
